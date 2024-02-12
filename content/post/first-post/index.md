@@ -96,3 +96,9 @@ git commit -m "initial commit"
 日本語のカテゴリー名には対応していないようですが、英語のカテゴリー名は自動的に小文字のケバブケースに変換される様子が見られました。
 
 本当はもっと詳しくみた方がいいんだとは思いますが今回は書けるようになるが目標だったので、、
+
+## デプロイ
+
+https://gohugo.io/hosting-and-deployment/hosting-on-github/
+公式に沿って行えばよしです。
+ただし、一度デプロイしてしまってから、config/_default/config.tomlにあるbaseurlをgithub pagesのURLに変更することを忘れないでください。
