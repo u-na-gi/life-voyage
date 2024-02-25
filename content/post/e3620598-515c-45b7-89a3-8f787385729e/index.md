@@ -1,5 +1,5 @@
 ---
-title: "Extension host terminated unexpectedly."と急に言われ出した時
+title: 「Extension host terminated unexpectedly.」と急に言われ出した時
 description: 
 slug: e3620598-515c-45b7-89a3-8f787385729e
 date: 2024-02-26T02:24:41+09:00
