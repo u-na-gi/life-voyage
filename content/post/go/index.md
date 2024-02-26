@@ -5,7 +5,7 @@ slug: try-go-memo
 date: 2024-02-18T04:59:40+09:00
 image: 
 categories:
-    - go
+    - Go
 weight: 1   
 ---
 

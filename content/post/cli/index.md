@@ -6,7 +6,7 @@ slug: go-create-cli
 date: 2024-02-18T04:33:44+09:00
 image: 
 categories:
-    - go
+    - Go
     - cli
     - cobra
 weight: 1     
