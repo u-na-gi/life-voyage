@@ -1,16 +1,34 @@
 /*
 Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
 import (
 	"os"
+	"os/exec"
+	"runtime"
 
 	"github.com/spf13/cobra"
 )
 
+func openBrowser(url string) {
+	var err error
 
+	switch runtime.GOOS {
+	case "linux":
+		err = exec.Command("xdg-open", url).Start()
+	case "windows":
+		err = exec.Command("rundll32", "url.dll,FileProtocolHandler", url).Start()
+	case "darwin":
+		err = exec.Command("open", url).Start()
+	default:
+		err = exec.Command("open", url).Start()
+	}
+
+	if err != nil {
+		panic(err)
+	}
+}
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -31,6 +49,8 @@ to quickly create a Cobra application.`,
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
 	err := rootCmd.Execute()
+	// ブラウザで開く
+	openBrowser("https://u-na-gi.github.io/life-voyage/")
 	if err != nil {
 		os.Exit(1)
 	}
@@ -47,5 +67,3 @@ func init() {
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
-
-
