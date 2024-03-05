@@ -1,5 +1,5 @@
 ---
-title: 
+title: flutterから　grpc server
 description: 
 slug: 518db3b2-49f4-4361-b05c-994c205cbeaf
 date: 2024-03-03T03:44:00+09:00
