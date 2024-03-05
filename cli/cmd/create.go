@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"time"
 
@@ -77,12 +78,15 @@ weight: 1
 			log.Fatal(err)
 		}
 
-		msg := fmt.Sprintf(`created!
-code -n %s
-code --reuse-window %s`, repo, contentPath)
-
-		fmt.Println(msg)
-
+		fmt.Println("created!")
+		err1 := exec.Command("code", "-n", repo).Run()
+		if err1 != nil {
+			panic(err1)
+		}
+		err2 := exec.Command("code", "--reuse-window", contentPath).Run()
+		if err2 != nil {
+			panic(err2)
+		}
 	},
 }
 
